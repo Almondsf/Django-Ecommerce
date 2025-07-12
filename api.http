@@ -1,0 +1,32 @@
+GET http://localhost:8000/products/ HTTP/1.1
+
+
+###
+POST http://localhost:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg0OTQ0LCJpYXQiOjE3NTEyODQ2NDQsImp0aSI6ImYwMWEzZDZjYjE1MzRmYjlhNjIwODljNTYzZDMyZmU1IiwidXNlcl9pZCI6MX0.vpvwrRwqG03RF-E04hMwxcvHHnXkLbZGfap4YTkK-mo
+
+{
+  "name": "New Product",
+  "price": 19.99,
+  "stock": 100,
+  "description": "A brand new product"
+}
+
+
+###
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "test"
+}
+
+###
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTM3MTY0MSwiaWF0IjoxNzUxMjg1MjQxLCJqdGkiOiIyNWQ0YTRlZWRmMTU0MGFmYWU0YmE0MTRiMGQxMzZmNSIsInVzZXJfaWQiOjF9.Y9FCge20dVmt9M3IG0UENJHYk9pZpaOb5LfGLF4WIhg"
+}
